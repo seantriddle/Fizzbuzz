@@ -7,7 +7,6 @@ public class STRFizzBuzz
   //static String[] fzbzArray = new String[501];
   static final int arraySize = 3000;
   static ArrayList<String> fzbzArray = new ArrayList<String>(arraySize);
-  //static int recursionLimit = 3000;
   
   public static void main(String[] args)
   {
@@ -16,7 +15,7 @@ public class STRFizzBuzz
     STRFizzBuzz fzbz2 = new STRFizzBuzz();               //recursive fizzbuzz
     
     while (true){
-      System.out.println("solution 1 or 2?");
+      System.out.println("Solution 1 or 2?");
       
       try
       {
@@ -71,10 +70,13 @@ public class STRFizzBuzz
     {
       if (i%3 == 0 && i%5 != 0)                 //if divisible by 3 and not 5, fizz
         fzbzArray.add("Fizz");
+
       else if (i%3 != 0 && i%5 == 0)            //if divisible by 5 and not 3, buzz
         fzbzArray.add("Buzz");
+
       else if (i%3 == 0 && i%5 == 0)            //if divisible by both 3 and 5, fizzbuzz
         fzbzArray.add("Fizzbuzz");
+ 
       else                                      //                 /\
         fzbzArray.add(Integer.toString(i));     // if none of the above, print just the number
     }
@@ -92,10 +94,13 @@ public class STRFizzBuzz
       
       if (mod3 == 0 && mod5 == 0)    //functionally the same as above, but should be faster due to not needing to calculate the modulus 3 x 2 times, instead only doing it twice
         fzbzArray.add("Fizzbuzz");   //less comparisons as well, by comparing both mod3 and mod5 first, then only checking mod5 once, then mod3 once
+
       else if (mod5 == 0)
         fzbzArray.add("Buzz");
+      
       else if  (mod3 == 0)
         fzbzArray.add("Fizz");
+      
       else
         fzbzArray.add(Integer.toString(start));
       
